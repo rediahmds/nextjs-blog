@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import Layout from '../../components/Layout';
 
 export default function FirstPost() {
   return (
-    <div>
+    <Layout>
       <Head>
         <title>First Post</title>
       </Head>
@@ -12,6 +13,6 @@ export default function FirstPost() {
       <div>
         <Link href="/">Return Home</Link>
       </div>
-    </div>
+    </Layout>
   );
 }
