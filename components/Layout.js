@@ -11,6 +11,7 @@ export const siteTitle = 'Reday Try';
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
+      {/* Metadata */}
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -27,6 +28,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
+        {/* Render profile picture. If at Home, render bigger size of that pic */}
         {home ? (
           <>
             <Image
@@ -59,7 +61,9 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header>
+      {/* Render main content, children of this very component */}
       <main>{children}</main>
+      {/* If not at Home, show the button */}
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
