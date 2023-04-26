@@ -6,7 +6,7 @@ import { getPostsIDs, getPostByID } from '../../lib/posts';
 import utilStyles from '../../styles/utils.module.css';
 
 export async function getStaticProps({ params }) {
-  const postData = getPostByID(params.id);
+  const postData = await getPostByID(params.id);
   return {
     props: {
       postData,
