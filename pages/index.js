@@ -1,5 +1,7 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Layout, { siteTitle } from '../components/Layout';
+import DateTime from '../components/DateTime';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPosts } from '../lib/posts';
 
@@ -43,11 +45,11 @@ export default function Home({ posts }) {
         <ul className={utilStyles.list}>
           {posts.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>{title}</Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                <DateTime dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
