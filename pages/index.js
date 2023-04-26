@@ -3,7 +3,8 @@ import Layout, { siteTitle } from '../components/Layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPosts } from '../lib/posts';
 
-// Executed at build time in production
+// Production: Executed at build time in
+// Development: Executed on each request
 export async function getStaticProps() {
   const posts = getSortedPosts();
 
